@@ -19,8 +19,8 @@ import java.util.Map;
  * Created by daniel on 17-4-27.
  */
 
-public class FastjsonProcessor implements IJsonProcessor {
-    private static final String TAG = "FastjsonProcessor";
+public class FastJsonProcessor implements IJsonProcessor {
+    private static final String TAG = "FastJsonProcessor";
 
     @Override
     public String toJson(Object obj) {

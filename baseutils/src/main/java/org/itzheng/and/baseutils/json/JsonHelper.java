@@ -1,7 +1,7 @@
 package org.itzheng.and.baseutils.json;
 
 import org.itzheng.and.baseutils.json.processor.IJsonProcessor;
-import org.itzheng.and.baseutils.json.processor.impl.FastjsonProcessor;
+import org.itzheng.and.baseutils.json.processor.impl.FastJsonProcessor;
 
 import java.lang.reflect.Type;
 import java.util.List;
@@ -25,7 +25,7 @@ public class JsonHelper {
      *
      */
     static {
-        mJsonProcessor = new FastjsonProcessor();
+        mJsonProcessor = new FastJsonProcessor();
     }
 
     public static String toJson(Object obj) {

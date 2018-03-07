@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">BaseUtils</string>
-    <string name="language_item_auto">Auto(Default)</string>
+    <string name="language_item_auto">跟隨系統</string>
 </resources>
