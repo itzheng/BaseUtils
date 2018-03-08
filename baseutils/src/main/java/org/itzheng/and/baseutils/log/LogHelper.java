@@ -27,7 +27,7 @@ public class LogHelper {
      * 默认处理器
      */
     static {
-        mLogProcessor = new LoggerProcessor();
+        mLogProcessor = new SysLogProcessor();
     }
 
     public static void v(String tag, String msg) {

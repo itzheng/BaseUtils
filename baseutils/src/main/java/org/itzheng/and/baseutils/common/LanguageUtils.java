@@ -87,4 +87,27 @@ public class LanguageUtils {
         //都不为空的时候
         return locale1.equals(locale2);
     }
+
+    /**
+     * 新建一个Locale
+     *
+     * @param language Locale.toString();如：zh_TW
+     * @return
+     */
+    public static Locale newLocale(String language) {
+        if (language == null) {
+            return null;
+        }
+        String[] value = language.split("_");
+        if (value == null || value.length == 0) {
+            return null;
+        }
+        String lang = "";
+        String country = "";
+        lang = value[0];
+        if (value.length > 1) {
+            country = value[1];
+        }
+        return new Locale(lang, country);
+    }
 }
