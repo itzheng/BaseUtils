@@ -1,5 +1,6 @@
 package org.itzheng.and.baseutils.common;
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
@@ -26,8 +27,18 @@ public class LanguageUtils {
      *
      * @param locale {@link Locale}
      */
-    public static void setAppLanguage(Locale locale) {
-        Resources res = UIUtils.getContext().getResources();
+    private static void setAppLanguage(Locale locale) {
+        setAppLanguage(UIUtils.getContext(), locale);
+    }
+
+    /**
+     * 设置当前APP语言
+     *
+     * @param context
+     * @param locale  {@link Locale}
+     */
+    public static void setAppLanguage(Context context, Locale locale) {
+        Resources res = context.getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();
         if (mSysLocal == null) {
@@ -44,9 +55,18 @@ public class LanguageUtils {
      *
      * @return
      */
-    public static Locale getCurrentAppLocale() {
+    private static Locale getCurrentAppLocale() {
+        return getCurrentAppLocale(UIUtils.getContext());
+    }
+
+    /**
+     * 获取当前APP的语言
+     *
+     * @return
+     */
+    public static Locale getCurrentAppLocale(Context context) {
         if (true) {
-            Resources res = UIUtils.getContext().getResources();
+            Resources res = context.getResources();
             Configuration conf = res.getConfiguration();
             if (conf.locale != null) {
                 return conf.locale;

@@ -18,22 +18,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        BaseUtils.init(this);
 
-        LanguageUtils.setAppLanguage(Locale.TRADITIONAL_CHINESE);
+        LanguageUtils.setAppLanguage(this, Locale.TRADITIONAL_CHINESE);
         testLanguage();
 //        setLanguage();
-        LanguageUtils.setAppLanguage(LanguageUtils.getSystemLocale());
+        LanguageUtils.setAppLanguage(this, LanguageUtils.getSystemLocale());
         testLanguage();
     }
 
     private void setLanguage() {
 //        LanguageUtils.setAppLanguage(this, Locale.SIMPLIFIED_CHINESE);
-        LanguageUtils.setAppLanguage(new Locale("zh"));
+        LanguageUtils.setAppLanguage(this, new Locale("zh"));
     }
 
     private static final String TAG = "MainActivity";
 
     private void testLanguage() {
-        Locale currentAppLocale = LanguageUtils.getCurrentAppLocale();
+        Locale currentAppLocale = LanguageUtils.getCurrentAppLocale(this);
         LogHelper.d(TAG, "currentAppLocale isEquals US:" + LanguageUtils.isEquals(currentAppLocale, Locale.US));
         LogHelper.d(TAG, "currentAppLocale:" + currentAppLocale.toString());
         Locale systemLocale = LanguageUtils.getSystemLocale();
