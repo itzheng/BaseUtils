@@ -8,4 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SwitchTheme">
+        <item name="colorAccent">@color/colorSwitchOn</item>
+    </style>
 </resources>
